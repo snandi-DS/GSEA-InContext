@@ -1,5 +1,13 @@
-import gseapy
 import os
+import sys
+
+gsea_incontext_path=os.path.abspath(os.path.join(os.path.dirname('__file__')))
+print(gsea_incontext_path)
+gsea_local_path=os.path.join(gsea_incontext_path,'gseapy')
+sys.path.insert(0,gsea_local_path)
+import gseapy
+import sys, logging
+
 import numpy as np
 from numpy.random import choice
 from collections import defaultdict
