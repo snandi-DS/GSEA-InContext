@@ -29,11 +29,28 @@ Data & Availability
 
 The data, results and analysis described in `our preprint <https://www.biorxiv.org/content/early/2018/02/04/259440>`_ are hosted in a Synapse project available `here <https://www.synapse.org/GSEA_InContext>`_ (doi:10.7303/syn11804693).
 
+Create the Conda Environment
+-----------------------------
+conda env create -f environment.yaml
+
+Adding a Python Environment Kernel in Jupyter Notebook
+----------------------------------------------------------
+
+To use a specific Python environment in Jupyter Notebook, you need to install the `ipykernel` package and add the environment as a Jupyter kernel. Follow these steps:
+
+ Run the following command in bash: pip install ipykernel
+
+Add the Environment to Jupyter
+---------------------------------
+Once ipykernel is installed, you can add the environment to Jupyter as a kernel. Run the following command:
+python -m ipykernel install --user --name=<Python environment_name>
+
+
 
 Dependencies & Requirements
 --------------
-* Python 2.7 or 3.4+
-* Numpy >= 1.13.0
+* Python 3.9+
+* Numpy
 * Pandas
 * Matplotlib
 * Beautifulsoup4
@@ -66,7 +83,7 @@ Run GSEAPY inside Python console:
     # Run GSEA-InContext
     gseapy.incontext(rnk='gsea_data.rnk', gene_sets='gene_sets.gmt', backround_rnks = 'permuted_background.csv', outdir='out')
 
-A full example can be seen in ``run_example.py``. The full analysis of Kegg and Hallmarks gene sets was run with ``run_all_442.py``.
+A full example can be seen in ``run_example.ipynb``. The full analysis of Kegg and Hallmarks gene sets was run with ``run_all_442.py``.
 
 
 Bug Reports
